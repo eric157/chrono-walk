@@ -1,0 +1,161 @@
+{
+  "title": "Chrono-Walk",
+  "subtitle": "Advanced Stochastic Process Simulator",
+  "appDescription": "Real-time Monte Carlo simulations and visualizations for random walks on graphs",
+  
+  "navigation": {
+    "home": "Home",
+    "modes": "Modes",
+    "documentation": "Documentation",
+    "settings": "Settings",
+    "about": "About",
+    "contact": "Contact"
+  },
+  
+  "modes": {
+    "cycleAnalysis": "Cycle Analysis",
+    "cycleAnalysisDesc": "Monte Carlo simulation of random walks on cycle graphs",
+    "animatedWalk": "Animated Walk",
+    "animatedWalkDesc": "Real-time visualization of a single random walk",
+    "hittingTime": "Hitting Time",
+    "hittingTimeDesc": "First passage time matrix computation",
+    "graphComparison": "Graph Comparison",
+    "graphComparisonDesc": "Compare mixing times across different graph types"
+  },
+  
+  "parameters": {
+    "graphSize": "Graph Size (nodes)",
+    "graphSizeHint": "Number of nodes in the graph (3-100)",
+    "drift": "Drift Parameter (β)",
+    "driftHint": "Asymmetry parameter for biased random walk (0-1)",
+    "simulations": "Number of Simulations",
+    "simulationsHint": "Monte Carlo trials for estimation (100-100,000)",
+    "epsilon": "Tolerance (ε)",
+    "epsilonHint": "Convergence tolerance for mixing time"
+  },
+  
+  "buttons": {
+    "run": "Run Simulation",
+    "running": "Running...",
+    "stop": "Stop",
+    "reset": "Reset",
+    "export": "Export Results",
+    "download": "Download",
+    "share": "Share",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "apply": "Apply",
+    "clear": "Clear"
+  },
+  
+  "results": {
+    "coverTime": "Cover Time",
+    "hittingTime": "Hitting Time",
+    "mixingTime": "Mixing Time",
+    "spectralGap": "Spectral Gap",
+    "occupancy": "Node Occupancy",
+    "statistics": "Statistics",
+    "mean": "Mean",
+    "stdDev": "Standard Deviation",
+    "min": "Minimum",
+    "max": "Maximum",
+    "median": "Median"
+  },
+  
+  "charts": {
+    "heatmap": "Heatmap",
+    "histogram": "Histogram",
+    "timeSeries": "Time Series",
+    "scatter": "Scatter Plot",
+    "boxPlot": "Box Plot",
+    "distribution": "Distribution"
+  },
+  
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "visualization": "Visualization",
+    "colorScheme": "Color Scheme",
+    "animationSpeed": "Animation Speed",
+    "accessibility": "Accessibility",
+    "fontSize": "Font Size",
+    "highContrast": "High Contrast",
+    "reducedMotion": "Reduce Motion",
+    "notifications": "Notifications",
+    "enableNotifications": "Enable Notifications",
+    "soundEnabled": "Sound Enabled",
+    "computation": "Computation",
+    "useBackendAPI": "Use Backend API",
+    "fallbackToClient": "Fallback to Client Computation"
+  },
+  
+  "status": {
+    "computing": "Computing...",
+    "completed": "Computation completed",
+    "failed": "Computation failed",
+    "cancelled": "Computation cancelled",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  
+  "messages": {
+    "simulationRunning": "Simulation is running. Please wait...",
+    "simulationComplete": "Simulation completed successfully!",
+    "simulationError": "An error occurred during simulation",
+    "loadingData": "Loading data...",
+    "noResults": "No results available",
+    "noData": "No data to display",
+    "confirmExit": "Are you sure you want to exit? Unsaved work will be lost.",
+    "copyToClipboard": "Copied to clipboard",
+    "sharing": "Sharing results...",
+    "exportFormat": "Export format",
+    "selectFormat": "Select export format (JSON, CSV, PNG, SVG)"
+  },
+  
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "days": "days",
+    "computationTime": "Computation Time",
+    "lastRun": "Last Run",
+    "totalTime": "Total Time"
+  },
+  
+  "graph": {
+    "cycle": "Cycle Graph",
+    "random": "Random Graph",
+    "grid": "Grid Graph",
+    "nodes": "Nodes",
+    "edges": "Edges",
+    "density": "Density"
+  },
+  
+  "help": {
+    "title": "Help & Documentation",
+    "gettingStarted": "Getting Started",
+    "tutorials": "Tutorials",
+    "faq": "FAQ",
+    "apiDocs": "API Documentation",
+    "contactSupport": "Contact Support",
+    "reportBug": "Report a Bug"
+  },
+  
+  "footer": {
+    "about": "About",
+    "license": "License",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "madeWith": "Made with ❤️ by the Chrono-Walk Team",
+    "github": "GitHub",
+    "documentation": "Documentation",
+    "version": "Version"
+  }
+}

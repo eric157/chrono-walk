@@ -1,0 +1,161 @@
+{
+  "title": "Chrono-Walk",
+  "subtitle": "高级随机过程模拟器",
+  "appDescription": "用于图上随机游走的实时蒙特卡罗模拟和可视化",
+  
+  "navigation": {
+    "home": "主页",
+    "modes": "模式",
+    "documentation": "文档",
+    "settings": "设置",
+    "about": "关于",
+    "contact": "联系"
+  },
+  
+  "modes": {
+    "cycleAnalysis": "循环分析",
+    "cycleAnalysisDesc": "循环图上随机游走的蒙特卡罗模拟",
+    "animatedWalk": "动画游走",
+    "animatedWalkDesc": "单个随机游走的实时可视化",
+    "hittingTime": "首达时间",
+    "hittingTimeDesc": "首通过时间矩阵计算",
+    "graphComparison": "图表比较",
+    "graphComparisonDesc": "比较不同图类型的混合时间"
+  },
+  
+  "parameters": {
+    "graphSize": "图大小（节点）",
+    "graphSizeHint": "图中的节点数（3-100）",
+    "drift": "漂移参数（β）",
+    "driftHint": "有偏随机游走的不对称参数（0-1）",
+    "simulations": "模拟次数",
+    "simulationsHint": "用于估计的蒙特卡罗试验（100-100,000）",
+    "epsilon": "容差（ε）",
+    "epsilonHint": "混合时间收敛容差"
+  },
+  
+  "buttons": {
+    "run": "运行模拟",
+    "running": "运行中...",
+    "stop": "停止",
+    "reset": "重置",
+    "export": "导出结果",
+    "download": "下载",
+    "share": "分享",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "apply": "应用",
+    "clear": "清空"
+  },
+  
+  "results": {
+    "coverTime": "覆盖时间",
+    "hittingTime": "首达时间",
+    "mixingTime": "混合时间",
+    "spectralGap": "谱间隙",
+    "occupancy": "节点占有率",
+    "statistics": "统计信息",
+    "mean": "平均值",
+    "stdDev": "标准差",
+    "min": "最小值",
+    "max": "最大值",
+    "median": "中位数"
+  },
+  
+  "charts": {
+    "heatmap": "热力图",
+    "histogram": "直方图",
+    "timeSeries": "时间序列",
+    "scatter": "散点图",
+    "boxPlot": "箱线图",
+    "distribution": "分布图"
+  },
+  
+  "settings": {
+    "title": "设置",
+    "theme": "主题",
+    "language": "语言",
+    "darkMode": "暗黑模式",
+    "lightMode": "浅色模式",
+    "visualization": "可视化",
+    "colorScheme": "配色方案",
+    "animationSpeed": "动画速度",
+    "accessibility": "无障碍",
+    "fontSize": "字体大小",
+    "highContrast": "高对比度",
+    "reducedMotion": "减少动画",
+    "notifications": "通知",
+    "enableNotifications": "启用通知",
+    "soundEnabled": "启用声音",
+    "computation": "计算",
+    "useBackendAPI": "使用后端API",
+    "fallbackToClient": "回退到客户端计算"
+  },
+  
+  "status": {
+    "computing": "计算中...",
+    "completed": "计算完成",
+    "failed": "计算失败",
+    "cancelled": "已取消",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息"
+  },
+  
+  "messages": {
+    "simulationRunning": "模拟正在运行。请稍候...",
+    "simulationComplete": "模拟成功完成！",
+    "simulationError": "模拟期间发生错误",
+    "loadingData": "加载数据中...",
+    "noResults": "没有可用的结果",
+    "noData": "没有数据可显示",
+    "confirmExit": "确定要退出吗？未保存的工作将丢失。",
+    "copyToClipboard": "已复制到剪贴板",
+    "sharing": "分享结果中...",
+    "exportFormat": "导出格式",
+    "selectFormat": "选择导出格式（JSON、CSV、PNG、SVG）"
+  },
+  
+  "time": {
+    "seconds": "秒",
+    "minutes": "分钟",
+    "hours": "小时",
+    "days": "天",
+    "computationTime": "计算时间",
+    "lastRun": "上次运行",
+    "totalTime": "总计时间"
+  },
+  
+  "graph": {
+    "cycle": "循环图",
+    "random": "随机图",
+    "grid": "网格图",
+    "nodes": "节点",
+    "edges": "边",
+    "density": "密度"
+  },
+  
+  "help": {
+    "title": "帮助和文档",
+    "gettingStarted": "入门指南",
+    "tutorials": "教程",
+    "faq": "常见问题",
+    "apiDocs": "API文档",
+    "contactSupport": "联系支持",
+    "reportBug": "报告错误"
+  },
+  
+  "footer": {
+    "about": "关于",
+    "license": "许可证",
+    "privacy": "隐私",
+    "terms": "条款",
+    "contact": "联系",
+    "madeWith": "由Chrono-Walk团队用❤️制作",
+    "github": "GitHub",
+    "documentation": "文档",
+    "version": "版本"
+  }
+}

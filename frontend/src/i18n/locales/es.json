@@ -1,0 +1,161 @@
+{
+  "title": "Chrono-Walk",
+  "subtitle": "Simulador avanzado de procesos estocásticos",
+  "appDescription": "Simulaciones Monte Carlo en tiempo real y visualizaciones para paseos aleatorios en gráficos",
+  
+  "navigation": {
+    "home": "Inicio",
+    "modes": "Modos",
+    "documentation": "Documentación",
+    "settings": "Configuración",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  
+  "modes": {
+    "cycleAnalysis": "Análisis de ciclo",
+    "cycleAnalysisDesc": "Simulación Monte Carlo de paseos aleatorios en gráficos de ciclo",
+    "animatedWalk": "Paseo animado",
+    "animatedWalkDesc": "Visualización en tiempo real de un único paseo aleatorio",
+    "hittingTime": "Tiempo de impacto",
+    "hittingTimeDesc": "Cálculo de matriz de tiempo de primer paso",
+    "graphComparison": "Comparación de gráficos",
+    "graphComparisonDesc": "Comparar tiempos de mezcla en diferentes tipos de gráficos"
+  },
+  
+  "parameters": {
+    "graphSize": "Tamaño del gráfico (nodos)",
+    "graphSizeHint": "Número de nodos en el gráfico (3-100)",
+    "drift": "Parámetro de sesgo (β)",
+    "driftHint": "Parámetro de asimetría para paseo aleatorio sesgado (0-1)",
+    "simulations": "Número de simulaciones",
+    "simulationsHint": "Ensayos Monte Carlo para estimación (100-100.000)",
+    "epsilon": "Tolerancia (ε)",
+    "epsilonHint": "Tolerancia de convergencia para tiempo de mezcla"
+  },
+  
+  "buttons": {
+    "run": "Ejecutar simulación",
+    "running": "Ejecutando...",
+    "stop": "Detener",
+    "reset": "Reiniciar",
+    "export": "Exportar resultados",
+    "download": "Descargar",
+    "share": "Compartir",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "apply": "Aplicar",
+    "clear": "Limpiar"
+  },
+  
+  "results": {
+    "coverTime": "Tiempo de cobertura",
+    "hittingTime": "Tiempo de impacto",
+    "mixingTime": "Tiempo de mezcla",
+    "spectralGap": "Brecha espectral",
+    "occupancy": "Ocupación de nodos",
+    "statistics": "Estadísticas",
+    "mean": "Media",
+    "stdDev": "Desviación estándar",
+    "min": "Mínimo",
+    "max": "Máximo",
+    "median": "Mediana"
+  },
+  
+  "charts": {
+    "heatmap": "Mapa de calor",
+    "histogram": "Histograma",
+    "timeSeries": "Serie temporal",
+    "scatter": "Gráfico de dispersión",
+    "boxPlot": "Gráfico de caja",
+    "distribution": "Distribución"
+  },
+  
+  "settings": {
+    "title": "Configuración",
+    "theme": "Tema",
+    "language": "Idioma",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "visualization": "Visualización",
+    "colorScheme": "Esquema de colores",
+    "animationSpeed": "Velocidad de animación",
+    "accessibility": "Accesibilidad",
+    "fontSize": "Tamaño de fuente",
+    "highContrast": "Alto contraste",
+    "reducedMotion": "Reducir movimiento",
+    "notifications": "Notificaciones",
+    "enableNotifications": "Habilitar notificaciones",
+    "soundEnabled": "Sonido habilitado",
+    "computation": "Cálculo",
+    "useBackendAPI": "Usar API de backend",
+    "fallbackToClient": "Alternancia a cálculo de cliente"
+  },
+  
+  "status": {
+    "computing": "Calculando...",
+    "completed": "Cálculo completado",
+    "failed": "Cálculo fallido",
+    "cancelled": "Cálculo cancelado",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información"
+  },
+  
+  "messages": {
+    "simulationRunning": "La simulación se está ejecutando. Por favor espere...",
+    "simulationComplete": "¡Simulación completada con éxito!",
+    "simulationError": "Ocurrió un error durante la simulación",
+    "loadingData": "Cargando datos...",
+    "noResults": "No hay resultados disponibles",
+    "noData": "No hay datos para mostrar",
+    "confirmExit": "¿Está seguro de que desea salir? El trabajo no guardado se perderá.",
+    "copyToClipboard": "Copiado al portapapeles",
+    "sharing": "Compartiendo resultados...",
+    "exportFormat": "Formato de exportación",
+    "selectFormat": "Seleccionar formato de exportación (JSON, CSV, PNG, SVG)"
+  },
+  
+  "time": {
+    "seconds": "segundos",
+    "minutes": "minutos",
+    "hours": "horas",
+    "days": "días",
+    "computationTime": "Tiempo de cálculo",
+    "lastRun": "Última ejecución",
+    "totalTime": "Tiempo total"
+  },
+  
+  "graph": {
+    "cycle": "Gráfico de ciclo",
+    "random": "Gráfico aleatorio",
+    "grid": "Gráfico de cuadrícula",
+    "nodes": "Nodos",
+    "edges": "Aristas",
+    "density": "Densidad"
+  },
+  
+  "help": {
+    "title": "Ayuda y documentación",
+    "gettingStarted": "Primeros pasos",
+    "tutorials": "Tutoriales",
+    "faq": "Preguntas frecuentes",
+    "apiDocs": "Documentación de la API",
+    "contactSupport": "Contactar soporte",
+    "reportBug": "Reportar un error"
+  },
+  
+  "footer": {
+    "about": "Acerca de",
+    "license": "Licencia",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "contact": "Contacto",
+    "madeWith": "Hecho con ❤️ por el equipo de Chrono-Walk",
+    "github": "GitHub",
+    "documentation": "Documentación",
+    "version": "Versión"
+  }
+}
