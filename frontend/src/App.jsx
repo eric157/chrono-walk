@@ -63,7 +63,7 @@ function App() {
             Algorithms ported from Python to JavaScript for browser execution
           </p>
           <p className="text-gray-500 text-sm mt-3">
-            <a href="https://eric157.github.io/chrono-walk/" className="text-blue-600 hover:underline">
+            <a href="https://github.com/eric157/chrono-walk/" className="text-blue-600 hover:underline">
               View on GitHub
             </a>
           </p>
