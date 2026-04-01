@@ -4,6 +4,8 @@ import { AnimatedWalk } from './components/AnimatedWalk'
 import { HittingTime } from './components/HittingTime'
 import { GraphComparison } from './components/GraphComparison'
 
+const logoUrl = `${import.meta.env.BASE_URL}logo.png`
+
 function App() {
   const [mode, setMode] = useState('cycle')
   
@@ -21,7 +23,7 @@ function App() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <img src="/logo.svg" alt="Chrono-Walk Logo" className="w-16 h-16" />
+            <img src={logoUrl} alt="Chrono-Walk Logo" className="w-16 h-16" />
           </div>
           <h1 className="main-title">Chrono-Walk: Stochastic Simulator</h1>
           <p className="text-gray-700 text-lg font-medium mt-4">
