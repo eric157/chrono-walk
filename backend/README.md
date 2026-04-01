@@ -2,25 +2,7 @@
 
 A FastAPI backend for the Chrono-Walk Stochastic Simulator. Optional - the frontend runs algorithms in the browser, but the backend can handle heavier computations and provide an API for other clients.
 
-## Quick Start
-
-### Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Server
-
-```bash
-python -m uvicorn main:app --reload
-```
-
-Server will be available at: http://localhost:8000
-
-### API Documentation
-
-Interactive API docs available at: http://localhost:8000/docs
+**Stack:** FastAPI + Uvicorn + NumPy (Python 3.8+)
 
 ## Endpoints
 
@@ -102,52 +84,7 @@ Compare mixing times across graph types.
 }
 ```
 
-## Deployment
 
-### Railway (Recommended)
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login and link project
-railway login
-railway link
-
-# Deploy
-railway up
-```
-
-### Render
-
-1. Create account at https://render.com
-2. Connect GitHub repository
-3. Create WebService:
-   - Build Command: `pip install -r backend/requirements.txt`
-   - Start Command: `uvicorn backend.main:app --host 0.0.0.0`
-4. Deploy
-
-### Heroku
-
-```bash
-heroku create chrono-walk-api
-git push heroku main
-```
-
-## Environment Variables
-
-(Optional - API works without any config)
-
-```env
-ENVIRONMENT=production
-API_PORT=8000
-```
-
-## CORS Configuration
-
-Currently allows requests from all origins (`*`). For production, update in `main.py`:
-
-```python
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://your-domain.com"],

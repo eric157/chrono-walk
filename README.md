@@ -15,27 +15,10 @@ A full-stack application for exploring random walks, hitting times, and graph mi
 - **🚀 Easy Deploy** - GitHub Pages + GitHub Actions
 - **📚 Full Documentation** - See `docs/` folder
 
-## 🚀 Quick Start
+## � Documentation
 
-### Install & Run
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Open [http://localhost:5173/chrono-walk/](http://localhost:5173/chrono-walk/)
-
-### Deploy
-```bash
-npm run deploy
-```
-Live at: `https://YOUR_USERNAME.github.io/chrono-walk/`
-
-## 📚 Documentation
-
-- **[Quick Start](docs/QUICKSTART.md)** - Get running in 5 minutes
-- **[Deployment](docs/DEPLOY.md)** - Deploy to GitHub Pages
-- **[Architecture](docs/ARCHITECTURE.md)** - Tech stack & structure
+- **[Architecture](docs/ARCHITECTURE.md)** - System design & tech stack
+- **[Execution](docs/DEPLOY.md)** - Technical execution details
 
 ## 🛠️ Tech Stack
 
@@ -83,18 +66,6 @@ All core stochastic process algorithms:
 - Spectral gap analysis
 
 **Ported to JavaScript** - runs entirely in your browser!
-
-## 📦 Installation
-
-```bash
-# Frontend
-cd frontend
-npm install
-
-# Backend (optional)
-cd backend
-pip install -r requirements.txt
-```
 
 ## 🎓 Learn More
 
@@ -174,62 +145,7 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173)
 
-### Backend (Optional - for API clients)
-
-```bash
-cd backend
-pip install -r requirements.txt
-python -m uvicorn main:app --reload
-```
-
-API available at [http://localhost:8000](http://localhost:8000)
-
-### Original Streamlit App (Still Available!)
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-## 📦 Deployment to GitHub Pages
-
-### Automatic (via GitHub Actions)
-
-1. Push to `main` branch:
-```bash
-git add .
-git commit -m "Deploy to GitHub Pages"
-git push origin main
-```
-
-2. GitHub Actions automatically:
-   - Builds the React app
-   - Deploys to `gh-pages` branch
-   - Site live at: `https://eric157.github.io/chrono-walk/`
-
-### Manual
-
-```bash
-cd frontend
-npm install
-npm run build
-npm run deploy
-```
-
-
-## 💻 Technology Stack
-
-### Frontend
-- **React 18** - Component-based UI
-- **Vite** - Lightning-fast build tool
-- **Plotly.js** - Interactive visualizations
-- **Tailwind CSS** - Utility-first styling
-- **JavaScript** - Algorithm implementations
-
-### Backend (Optional)
-- **FastAPI** - Modern Python web framework
-- **NumPy** - Numerical computations
-- **Numba** - JIT compilation for speed
+### Numba** - JIT compilation for speed
 
 ### Deployment
 - **GitHub Pages** - Free static hosting
@@ -367,34 +283,12 @@ MIT License - Use freely for learning and development!
 - [Tailwind CSS](https://tailwindcss.com)
 - [FastAPI](https://fastapi.tiangolo.com)
 
-## 🐛 Troubleshooting
+## � Technical Documentation
 
-### Build fails with "Cannot find module"
-```bash
-cd frontend
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### GitHub Pages shows 404
-- Check `vite.config.js` base URL matches repo name
-- Verify GitHub Pages is enabled in Settings
-- Check `gh-pages` branch exists
-
-### API returns 500 error
-- Check backend logs
-- Verify dependencies installed
-- Test endpoint with curl
-
-## 🌟 Roadmap
-
-- [ ] 3D graph visualizations
-- [ ] More graph types (star, wheel, complete)
-- [ ] Export results as CSV/JSON
-- [ ] Dark mode theme
-- [ ] Advanced statistics panel
-- [ ] Custom algorithm upload
-- [ ] Multi-user collaboration
+- [Frontend README](frontend/README.md) - Frontend architecture
+- [Backend README](backend/README.md) - Backend API reference
+- [Architecture](docs/ARCHITECTURE.md) - System design
+- [Execution](docs/DEPLOY.md) - Technical execu
 
 ---
 
