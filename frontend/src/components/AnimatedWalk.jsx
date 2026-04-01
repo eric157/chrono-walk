@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import Plot from 'react-plotly.js'
+import React, { useState, useEffect, useRef } from 'react'
+import Plotly from 'plotly.js-dist-min'
 import { buildCycleTransition, simulateWalkGeneral } from '../utils/algorithms'
 
 export function AnimatedWalk() {
@@ -9,6 +9,7 @@ export function AnimatedWalk() {
   const [frameIndex, setFrameIndex] = useState(0)
   const [path, setPath] = useState([])
   const [totalFrames, setTotalFrames] = useState(200)
+  const plotRef = useRef(null)
   
   useEffect(() => {
     const P = buildCycleTransition(n, beta)
@@ -34,6 +35,37 @@ export function AnimatedWalk() {
   const currentNodeTheta = path.length > 0 ? theta[path[frameIndex]] : 0
   
   const directionText = beta > 0.6 ? '🟢 Clockwise ➡️' : beta < 0.4 ? '⬅️ Counterclockwise 🟢' : '🟡 Random 🔀'
+  
+  useEffect(() => {
+    if (plotRef.current && path.length > 0) {
+      const data = [
+        {
+          r: Array(n).fill(1),
+          theta: theta,
+          type: 'scatterpolar',
+          mode: 'markers',
+          marker: { size: 12, color: '#764ba2', opacity: 0.7 },
+          name: 'Hive Nodes'
+        },
+        {
+          r: [1],
+          theta: [currentNodeTheta],
+          type: 'scatterpolar',
+          mode: 'markers',
+          marker: { size: 20, color: '#ff6b6b', symbol: 'star' },
+          name: 'Bee'
+        }
+      ]
+      const layout = {
+        title: `Step ${frameIndex + 1}/${path.length}`,
+        height: 500,
+        font: { size: 12 },
+        margin: { l: 50, r: 50, t: 50, b: 50 },
+        showlegend: true
+      }
+      Plotly.newPlot(plotRef.current, data, layout, { responsive: true })
+    }
+  }, [frameIndex, path, n, theta, currentNodeTheta])
   
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -97,34 +129,7 @@ export function AnimatedWalk() {
         <div className="progress-fill" style={{ width: `${(frameIndex / path.length) * 100}%` }}></div>
       </div>
       
-      <Plot
-        data={[
-          {
-            r: Array(n).fill(1),
-            theta: theta,
-            type: 'scatterpolar',
-            mode: 'markers',
-            marker: { size: 12, color: '#764ba2', opacity: 0.7 },
-            name: 'Hive Nodes'
-          },
-          {
-            r: [1],
-            theta: [currentNodeTheta],
-            type: 'scatterpolar',
-            mode: 'markers',
-            marker: { size: 20, color: '#ff6b6b', symbol: 'star' },
-            name: 'Bee'
-          }
-        ]}
-        layout={{
-          title: `Step ${frameIndex + 1}/${path.length}`,
-          height: 500,
-          font: { size: 12 },
-          margin: { l: 50, r: 50, t: 50, b: 50 },
-          showlegend: true
-        }}
-        config={{ responsive: true, displayModeBar: false }}
-      />
+      <div ref={plotRef}></div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react'
-import Plot from 'react-plotly.js'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
+import Plotly from 'plotly.js-dist-min'
 import {
   buildCycleTransition,
   buildRandomGraph,
@@ -11,6 +11,7 @@ export function GraphComparison() {
   const [n, setN] = useState(10)
   const [numTrials, setNumTrials] = useState(3)
   const [isComputing, setIsComputing] = useState(false)
+  const plotRef = useRef(null)
   
   const results = useMemo(() => {
     setIsComputing(true)
@@ -44,6 +45,30 @@ export function GraphComparison() {
   
   const fastest = Math.min(results.avgCycle, results.avgRandom, results.avgGrid)
   const fastestName = fastest === results.avgCycle ? 'Cycle' : fastest === results.avgRandom ? 'Random' : 'Grid'
+  
+  useEffect(() => {
+    if (plotRef.current) {
+      const data = [{
+        x: ['🔵 Cycle', '🎲 Random', '⊞ Grid'],
+        y: [results.avgCycle, results.avgRandom, results.avgGrid],
+        type: 'bar',
+        marker: {
+          color: ['#667eea', '#764ba2', '#ee5a6f']
+        }
+      }]
+      const layout = {
+        title: 'Graph Mixing Time Comparison (Lower = Faster Mixing)',
+        xaxis: { title: 'Graph Type' },
+        yaxis: { title: 'Mixing Time' },
+        height: 500,
+        font: { size: 12 },
+        showlegend: false,
+        margin: { l: 50, r: 50, t: 50, b: 50 },
+        hovermode: 'x unified'
+      }
+      Plotly.newPlot(plotRef.current, data, layout, { responsive: true })
+    }
+  }, [results])
   
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -87,27 +112,7 @@ export function GraphComparison() {
         </div>
       )}
       
-      <Plot
-        data={[{
-          x: ['🔵 Cycle', '🎲 Random', '⊞ Grid'],
-          y: [results.avgCycle, results.avgRandom, results.avgGrid],
-          type: 'bar',
-          marker: {
-            color: ['#667eea', '#764ba2', '#ee5a6f']
-          }
-        }]}
-        layout={{
-          title: 'Graph Mixing Time Comparison (Lower = Faster Mixing)',
-          xaxis: { title: 'Graph Type' },
-          yaxis: { title: 'Mixing Time' },
-          height: 500,
-          font: { size: 12 },
-          showlegend: false,
-          margin: { l: 50, r: 50, t: 50, b: 50 },
-          hovermode: 'x unified'
-        }}
-        config={{ responsive: true, displayModeBar: true }}
-      />
+      <div ref={plotRef}></div>
       
       <div className="grid grid-cols-3 gap-4 mt-6">
         <div className="metric-card">

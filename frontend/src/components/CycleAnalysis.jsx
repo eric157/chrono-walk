@@ -1,10 +1,12 @@
-import React, { useState, useMemo } from 'react'
-import Plot from 'react-plotly.js'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
+import Plotly from 'plotly.js-dist-min'
 import { runSimulationsFast } from '../utils/algorithms'
 
 export function CycleAnalysis() {
   const [n, setN] = useState(12)
   const [beta, setBeta] = useState(0.5)
+  const polarRef = useRef(null)
+  const histRef = useRef(null)
   
   const { occupancy, steps } = useMemo(() => {
     return runSimulationsFast(n, beta, 50000)
@@ -12,6 +14,52 @@ export function CycleAnalysis() {
   
   const theta = Array.from({ length: n }, (_, i) => i * 360 / n)
   const histData = steps.slice(0, 1000) // Sample for histogram
+  
+  useEffect(() => {
+    if (polarRef.current) {
+      const data = [{
+        r: occupancy,
+        theta: theta,
+        type: 'barpolar',
+        marker: {
+          color: occupancy,
+          colorscale: 'Plasma',
+          showscale: true,
+          colorbar: { title: 'Occupancy' }
+        }
+      }]
+      const layout = {
+        title: 'Which nodes does the walker favor?',
+        height: 500,
+        font: { size: 12 },
+        margin: { l: 50, r: 50, t: 50, b: 50 }
+      }
+      Plotly.newPlot(polarRef.current, data, layout, { responsive: true })
+    }
+  }, [occupancy, theta])
+  
+  useEffect(() => {
+    if (histRef.current) {
+      const data = [{
+        x: histData,
+        type: 'histogram',
+        nbinsx: 50,
+        marker: { color: '#667eea' },
+        name: 'Frequency'
+      }]
+      const layout = {
+        title: 'How many steps to visit every node?',
+        xaxis: { title: 'Steps' },
+        yaxis: { title: 'Frequency' },
+        height: 500,
+        font: { size: 12 },
+        showlegend: false,
+        margin: { l: 50, r: 50, t: 50, b: 50 },
+        hovermode: 'x unified'
+      }
+      Plotly.newPlot(histRef.current, data, layout, { responsive: true })
+    }
+  }, [histData])
   
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -53,50 +101,12 @@ export function CycleAnalysis() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
           <h3 className="subtitle">Node Occupancy Distribution</h3>
-          <Plot
-            data={[{
-              r: occupancy,
-              theta: theta,
-              type: 'barpolar',
-              marker: {
-                color: occupancy,
-                colorscale: 'Plasma',
-                showscale: true,
-                colorbar: { title: 'Occupancy' }
-              }
-            }]}
-            layout={{
-              title: 'Which nodes does the walker favor?',
-              height: 500,
-              font: { size: 12 },
-              margin: { l: 50, r: 50, t: 50, b: 50 }
-            }}
-            config={{ responsive: true, displayModeBar: true }}
-          />
+          <div ref={polarRef}></div>
         </div>
         
         <div>
           <h3 className="subtitle">Steps to Cover All Nodes</h3>
-          <Plot
-            data={[{
-              x: histData,
-              type: 'histogram',
-              nbinsx: 50,
-              marker: { color: '#667eea' },
-              name: 'Frequency'
-            }]}
-            layout={{
-              title: 'How many steps to visit every node?',
-              xaxis: { title: 'Steps' },
-              yaxis: { title: 'Frequency' },
-              height: 500,
-              font: { size: 12 },
-              showlegend: false,
-              margin: { l: 50, r: 50, t: 50, b: 50 },
-              hovermode: 'x unified'
-            }}
-            config={{ responsive: true, displayModeBar: false }}
-          />
+          <div ref={histRef}></div>
         </div>
       </div>
     </div>

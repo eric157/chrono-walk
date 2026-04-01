@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react'
-import Plot from 'react-plotly.js'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
+import Plotly from 'plotly.js-dist-min'
 import { estimateHittingTimes } from '../utils/algorithms'
 
 export function HittingTime() {
   const [n, setN] = useState(10)
   const [beta, setBeta] = useState(0.5)
+  const plotRef = useRef(null)
   
   const H = useMemo(() => {
     return estimateHittingTimes(n, beta, 500)
@@ -14,6 +15,28 @@ export function HittingTime() {
   const z = H
   const x = Array.from({ length: n }, (_, i) => i)
   const y = Array.from({ length: n }, (_, i) => i)
+  
+  useEffect(() => {
+    if (plotRef.current) {
+      const data = [{
+        z: z,
+        x: x,
+        y: y,
+        type: 'heatmap',
+        colorscale: 'YlOrRd',
+        colorbar: { title: 'Steps' }
+      }]
+      const layout = {
+        title: 'Average Steps to Reach Target Node (Hitting Time)',
+        xaxis: { title: 'Target Node' },
+        yaxis: { title: 'Starting Node' },
+        height: 600,
+        font: { size: 12 },
+        margin: { l: 80, r: 80, t: 80, b: 80 }
+      }
+      Plotly.newPlot(plotRef.current, data, layout, { responsive: true })
+    }
+  }, [z, x, y])
   
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -50,25 +73,7 @@ export function HittingTime() {
         </div>
       </div>
       
-      <Plot
-        data={[{
-          z: z,
-          x: x,
-          y: y,
-          type: 'heatmap',
-          colorscale: 'YlOrRd',
-          colorbar: { title: 'Steps' }
-        }]}
-        layout={{
-          title: 'Average Steps to Reach Target Node (Hitting Time)',
-          xaxis: { title: 'Target Node' },
-          yaxis: { title: 'Starting Node' },
-          height: 600,
-          font: { size: 12 },
-          margin: { l: 80, r: 80, t: 80, b: 80 }
-        }}
-        config={{ responsive: true, displayModeBar: true }}
-      />
+      <div ref={plotRef}></div>
     </div>
   )
 }
