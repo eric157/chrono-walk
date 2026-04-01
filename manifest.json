@@ -1,0 +1,159 @@
+{
+  "name": "Chrono-Walk: Advanced Stochastic Simulator",
+  "short_name": "Chrono-Walk",
+  "description": "Advanced stochastic process simulator with real-time Monte Carlo visualizations",
+  "start_url": "/chrono-walk/",
+  "scope": "/chrono-walk/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1e88e5",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "science"],
+  "screenshots": [
+    {
+      "src": "/chrono-walk/assets/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/assets/screenshot-2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/chrono-walk/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Cycle Analysis",
+      "short_name": "Cycle",
+      "description": "Quick launch to Cycle Analysis mode",
+      "url": "/chrono-walk/?mode=cycle",
+      "icons": [
+        {
+          "src": "/chrono-walk/icons/cycle-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Animated Walk",
+      "short_name": "Walk",
+      "description": "Quick launch to Animated Walk mode",
+      "url": "/chrono-walk/?mode=walk",
+      "icons": [
+        {
+          "src": "/chrono-walk/icons/walk-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Hitting Times",
+      "short_name": "Hitting",
+      "description": "Quick launch to Hitting Time mode",
+      "url": "/chrono-walk/?mode=hitting",
+      "icons": [
+        {
+          "src": "/chrono-walk/icons/hitting-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+chrono",
+      "url": "/chrono-walk/?config=%s"
+    }
+  ]
+}
