@@ -1,0 +1,12 @@
+numpy
+numba
+matplotlib
+seaborn
+scipy
+plotly
+streamlit
+pandas
+fastapi
+uvicorn
+python-multipart
+pydantic
