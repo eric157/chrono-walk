@@ -20,7 +20,10 @@ function App() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="main-title">🐝 Chrono-Walk: Stochastic Simulator</h1>
+          <div className="flex items-center justify-center mb-4">
+            <img src="/logo.svg" alt="Chrono-Walk Logo" className="w-16 h-16" />
+          </div>
+          <h1 className="main-title">Chrono-Walk: Stochastic Simulator</h1>
           <p className="text-gray-700 text-lg font-medium mt-4">
             Explore random walks, hitting times, and graph mixing dynamics
           </p>
