@@ -3,13 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'frontend/**'
       - '.github/workflows/deploy.yml'
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -34,9 +32,8 @@ jobs:
         run: npm run build
       
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
-          cname: chrono-walk.example.com
